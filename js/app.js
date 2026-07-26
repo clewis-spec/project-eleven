@@ -197,6 +197,14 @@ window.ELEVEN_APP = (() => {
     }
 
     if (
+  window.ELEVEN_CUSTOM_FOODS &&
+  typeof window.ELEVEN_CUSTOM_FOODS.init ===
+    "function"
+) {
+  window.ELEVEN_CUSTOM_FOODS.init();
+}
+
+    if (
       window.ELEVEN_PREFERENCES &&
       typeof window.ELEVEN_PREFERENCES.init ===
         "function"
