@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Eleven is a personalized 11-day nutrition and meal-planning application."
+  >
+
+  <title>Eleven | Smarter Nutrition. Better Habits.</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- Mobile header -->
+    <header class="mobile-header">
+      <a class="mobile-brand" href="#dashboard" aria-label="Eleven home">
+        <span class="brand-mark" aria-hidden="true">11</span>
+
+        <span class="mobile-brand-text">
+          Eleven
+        </span>
+      </a>
+
+      <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="#dashboard" aria-label="Eleven dashboard">
+          <span class="brand-mark" aria-hidden="true">11</span>
+
+          <span class="brand-copy">
+            <strong>Eleven</strong>
+            <small>Smarter nutrition.</small>
+          </span>
+        </a>
+      </div>
+
+      <nav class="primary-navigation" aria-label="Primary navigation">
+        <button
+          class="navigation-link is-active"
+          type="button"
+          data-section="dashboard"
+        >
+          <span class="navigation-icon" aria-hidden="true">⌂</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button
+          class="navigation-link"
+          type="button"
+          data-section="profile"
+        >
+          <span class="navigation-icon" aria-hidden="true">◎</span>
+          <span>My Profile</span>
+        </button>
+
+        <button
+          class="navigation-link"
+          type="button"
+          data-section="preferences"
+        >
+          <span class="navigation-icon" aria-hidden="true">◇</span>
+          <span>Food Preferences</span>
+        </button>
+
+        <button
+          class="navigation-link"
+          type="button"
+          data-section="meal-plan"
+        >
+          <span class="navigation-icon" aria-hidden="true">▦</span>
+          <span>11-Day Plan</span>
+        </button>
+
+        <button
+          class="navigation-link"
+          type="button"
+          data-section="grocery-list"
+        >
+          <span class="navigation-icon" aria-hidden="true">✓</span>
+          <span>Grocery List</span>
+        </button>
+
+        <button
+          class="navigation-link"
+          type="button"
+          data-section="progress"
+        >
+          <span class="navigation-icon" aria-hidden="true">↗</span>
+          <span>Progress</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="profile-summary">
+          <div class="profile-avatar" aria-hidden="true">
+            C
+          </div>
+
+          <div class="profile-summary-copy">
+            <strong id="sidebar-profile-name">Your Profile</strong>
+            <small>Personal plan</small>
+          </div>
+        </div>
+
+        <p class="version-number">
+          Eleven v0.1
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main application -->
+    <main class="main-content">
+
+      <!-- Dashboard -->
+      <section
+        class="app-section is-active"
+        id="dashboard"
+        data-app-section
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Your nutrition dashboard</p>
+
+            <h1>
+              Welcome to Eleven
+            </h1>
+
+            <p class="page-introduction">
+              Build a personalized 11-day eating plan around foods you
+              genuinely enjoy.
+            </p>
+          </div>
+
+          <button
+            class="button button-primary"
+            type="button"
+            data-go-to="profile"
+          >
+            Set up my profile
+          </button>
+        </div>
+
+        <div class="dashboard-hero">
+          <div class="dashboard-hero-copy">
+            <span class="status-badge">
+              Foundation ready
+            </span>
+
+            <h2>
+              Your next 11 days start here.
+            </h2>
+
+            <p>
+              Complete your profile, select your favourite foods, and
+              Eleven will create a structured meal plan with portions,
+              nutrition targets and a consolidated grocery list.
+            </p>
+
+            <div class="hero-actions">
+              <button
+                class="button button-primary"
+                type="button"
+                data-go-to="profile"
+              >
+                Create my profile
+              </button>
+
+              <button
+                class="button button-secondary"
+                type="button"
+                data-go-to="preferences"
+              >
+                Choose foods
+              </button>
+            </div>
+          </div>
+
+          <div class="dashboard-hero-visual" aria-hidden="true">
+            <div class="eleven-ring">
+              <span class="eleven-ring-number">11</span>
+              <span class="eleven-ring-label">days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Daily calories</span>
+              <span class="summary-icon" aria-hidden="true">⚡</span>
+            </div>
+
+            <strong id="dashboard-calorie-target">—</strong>
+
+            <small>
+              Complete your profile to calculate your target.
+            </small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Daily protein</span>
+              <span class="summary-icon" aria-hidden="true">P</span>
+            </div>
+
+            <strong id="dashboard-protein-target">—</strong>
+
+            <small>
+              Designed to support fullness and lean mass.
+            </small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Foods selected</span>
+              <span class="summary-icon" aria-hidden="true">♡</span>
+            </div>
+
+            <strong id="dashboard-food-count">0</strong>
+
+            <small>
+              Personalize the foods used in your plan.
+            </small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Current cycle</span>
+              <span class="summary-icon" aria-hidden="true">↻</span>
+            </div>
+
+            <strong id="dashboard-cycle-status">Not started</strong>
+
+            <small>
+              Your generated 11-day cycle will appear here.
+            </small>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="content-card setup-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Getting started</p>
+                <h2>Set up Eleven</h2>
+              </div>
+
+              <span class="progress-percentage" id="setup-percentage">
+                0%
+              </span>
+            </div>
+
+            <div class="progress-track" aria-hidden="true">
+              <span
+                class="progress-bar"
+                id="setup-progress-bar"
+              ></span>
+            </div>
+
+            <div class="setup-list">
+              <button
+                class="setup-item"
+                type="button"
+                data-go-to="profile"
+              >
+                <span class="setup-status" aria-hidden="true">1</span>
+
+                <span class="setup-copy">
+                  <strong>Complete your profile</strong>
+                  <small>
+                    Add your measurements, activity and weight goal.
+                  </small>
+                </span>
+
+                <span class="setup-arrow" aria-hidden="true">→</span>
+              </button>
+
+              <button
+                class="setup-item"
+                type="button"
+                data-go-to="preferences"
+              >
+                <span class="setup-status" aria-hidden="true">2</span>
+
+                <span class="setup-copy">
+                  <strong>Select preferred foods</strong>
+                  <small>
+                    Tell Eleven what you enjoy and what to avoid.
+                  </small>
+                </span>
+
+                <span class="setup-arrow" aria-hidden="true">→</span>
+              </button>
+
+              <button
+                class="setup-item"
+                type="button"
+                data-go-to="meal-plan"
+              >
+                <span class="setup-status" aria-hidden="true">3</span>
+
+                <span class="setup-copy">
+                  <strong>Generate your first cycle</strong>
+                  <small>
+                    Create a complete personalized 11-day plan.
+                  </small>
+                </span>
+
+                <span class="setup-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="content-card principles-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">The Eleven approach</p>
+                <h2>Simple principles</h2>
+              </div>
+            </div>
+
+            <div class="principles-list">
+              <div class="principle-item">
+                <span class="principle-number">01</span>
+
+                <div>
+                  <strong>Protein at every meal</strong>
+                  <p>
+                    Support fullness and help preserve lean body mass.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <span class="principle-number">02</span>
+
+                <div>
+                  <strong>Moderate calorie variation</strong>
+                  <p>
+                    Add flexibility and variety without extreme dieting.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <span class="principle-number">03</span>
+
+                <div>
+                  <strong>Foods you actually like</strong>
+                  <p>
+                    Build a plan that is realistic enough to follow.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <span class="principle-number">04</span>
+
+                <div>
+                  <strong>One cycle at a time</strong>
+                  <p>
+                    Focus on the next 11 days rather than perfection.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Profile -->
+      <section
+        class="app-section"
+        id="profile"
+        data-app-section
+        hidden
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h1>Build your profile</h1>
+
+            <p class="page-introduction">
+              Eleven uses this information to estimate your calorie and
+              protein targets. Your profile remains stored in this browser.
+            </p>
+          </div>
+        </div>
+
+        <form class="profile-form" id="profile-form">
+          <article class="form-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">About you</p>
+                <h2>Basic information</h2>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field form-field-wide">
+                <label for="profile-name">
+                  Profile name
+                </label>
+
+                <input
+                  id="profile-name"
+                  name="profileName"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="For example, Chris"
+                  maxlength="50"
+                  required
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="age">
+                  Age
+                </label>
+
+                <div class="input-with-unit">
+                  <input
+                    id="age"
+                    name="age"
+                    type="number"
+                    min="18"
+                    max="100"
+                    step="1"
+                    placeholder="55"
+                    required
+                  >
+
+                  <span>years</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="sex">
+                  Sex used for calculation
+                </label>
+
+                <select id="sex" name="sex" required>
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </div>
+          </article>
+
+          <article class="form-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Measurements</p>
+                <h2>Current starting point</h2>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="height-feet">
+                  Height
+                </label>
+
+                <div class="split-input">
+                  <div class="input-with-unit">
+                    <input
+                      id="height-feet"
+                      name="heightFeet"
+                      type="number"
+                      min="4"
+                      max="7"
+                      step="1"
+                      placeholder="6"
+                      required
+                    >
+
+                    <span>ft</span>
+                  </div>
+
+                  <div class="input-with-unit">
+                    <input
+                      id="height-inches"
+                      name="heightInches"
+                      type="number"
+                      min="0"
+                      max="11"
+                      step="1"
+                      placeholder="0"
+                      required
+                    >
+
+                    <span>in</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="current-weight">
+                  Current weight
+                </label>
+
+                <div class="input-with-unit">
+                  <input
+                    id="current-weight"
+                    name="currentWeight"
+                    type="number"
+                    min="80"
+                    max="600"
+                    step="0.1"
+                    placeholder="210"
+                    required
+                  >
+
+                  <span>lb</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="goal-weight">
+                  Goal weight
+                </label>
+
+                <div class="input-with-unit">
+                  <input
+                    id="goal-weight"
+                    name="goalWeight"
+                    type="number"
+                    min="80"
+                    max="600"
+                    step="0.1"
+                    placeholder="175"
+                    required
+                  >
+
+                  <span>lb</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="activity-level">
+                  Activity level
+                </label>
+
+                <select
+                  id="activity-level"
+                  name="activityLevel"
+                  required
+                >
+                  <option value="">Select an activity level</option>
+
+                  <option value="sedentary">
+                    Sedentary — mostly seated
+                  </option>
+
+                  <option value="light">
+                    Light — exercise 1–3 days weekly
+                  </option>
+
+                  <option value="moderate">
+                    Moderate — exercise 3–5 days weekly
+                  </option>
+
+                  <option value="active">
+                    Active — exercise 6–7 days weekly
+                  </option>
+
+                  <option value="very-active">
+                    Very active — physical work or intense training
+                  </option>
+                </select>
+              </div>
+            </div>
+          </article>
+
+          <article class="form-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Your objective</p>
+                <h2>Weight-loss pace</h2>
+              </div>
+            </div>
+
+            <div
+              class="choice-card-grid"
+              role="radiogroup"
+              aria-label="Preferred weight-loss pace"
+            >
+              <label class="choice-card">
+                <input
+                  type="radio"
+                  name="lossRate"
+                  value="conservative"
+                >
+
+                <span class="choice-card-content">
+                  <strong>Conservative</strong>
+                  <small>
+                    Approximately 0.5 lb per week
+                  </small>
+                </span>
+              </label>
+
+              <label class="choice-card">
+                <input
+                  type="radio"
+                  name="lossRate"
+                  value="moderate"
+                  checked
+                >
+
+                <span class="choice-card-content">
+                  <strong>Moderate</strong>
+                  <small>
+                    Approximately 1 lb per week
+                  </small>
+                </span>
+              </label>
+
+              <label class="choice-card">
+                <input
+                  type="radio"
+                  name="lossRate"
+                  value="aggressive"
+                >
+
+                <span class="choice-card-content">
+                  <strong>More aggressive</strong>
+                  <small>
+                    Approximately 1.5 lb per week
+                  </small>
+                </span>
+              </label>
+            </div>
+          </article>
+
+          <article class="target-preview" id="target-preview">
+            <div>
+              <span>Estimated daily calories</span>
+              <strong id="profile-calorie-preview">—</strong>
+            </div>
+
+            <div>
+              <span>Estimated daily protein</span>
+              <strong id="profile-protein-preview">—</strong>
+            </div>
+
+            <div>
+              <span>Estimated maintenance</span>
+              <strong id="profile-maintenance-preview">—</strong>
+            </div>
+          </article>
+
+          <div class="form-actions">
+            <button
+              class="button button-secondary"
+              type="reset"
+              id="reset-profile-button"
+            >
+              Reset
+            </button>
+
+            <button
+              class="button button-primary"
+              type="submit"
+            >
+              Save profile
+            </button>
+          </div>
+
+          <p
+            class="form-message"
+            id="profile-form-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+
+      <!-- Food preferences -->
+      <section
+        class="app-section"
+        id="preferences"
+        data-app-section
+        hidden
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Step 2</p>
+            <h1>Choose your foods</h1>
+
+            <p class="page-introduction">
+              Select the foods you enjoy. Eleven will prioritize these
+              selections when it builds your meal plan.
+            </p>
+          </div>
+
+          <div class="header-actions">
+            <button
+              class="button button-secondary"
+              id="select-all-foods-button"
+              type="button"
+            >
+              Select all
+            </button>
+
+            <button
+              class="button button-secondary"
+              id="clear-foods-button"
+              type="button"
+            >
+              Clear selections
+            </button>
+          </div>
+        </div>
+
+        <div class="preference-summary">
+          <div>
+            <span>Foods selected</span>
+            <strong id="preference-food-count">0</strong>
+          </div>
+
+          <p>
+            Select several foods from each category to create a varied plan.
+          </p>
+        </div>
+
+        <div id="food-preference-groups">
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Proteins</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="protein-food-grid"
+              data-food-category="protein"
+            >
+              <p class="empty-state">
+                Protein choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Vegetables</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="vegetable-food-grid"
+              data-food-category="vegetable"
+            >
+              <p class="empty-state">
+                Vegetable choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Fruits</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="fruit-food-grid"
+              data-food-category="fruit"
+            >
+              <p class="empty-state">
+                Fruit choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Carbohydrates</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="carbohydrate-food-grid"
+              data-food-category="carbohydrate"
+            >
+              <p class="empty-state">
+                Carbohydrate choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Healthy fats</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="fat-food-grid"
+              data-food-category="fat"
+            >
+              <p class="empty-state">
+                Healthy-fat choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-category-card">
+            <div class="card-heading">
+              <div>
+                <p class="eyebrow">Category</p>
+                <h2>Dairy and alternatives</h2>
+              </div>
+            </div>
+
+            <div
+              class="food-card-grid"
+              id="dairy-food-grid"
+              data-food-category="dairy"
+            >
+              <p class="empty-state">
+                Dairy choices will be loaded in the next build step.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <article class="form-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Foods to avoid</p>
+              <h2>Exclusions and dislikes</h2>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="excluded-foods">
+              List anything you do not want included
+            </label>
+
+            <textarea
+              id="excluded-foods"
+              name="excludedFoods"
+              rows="4"
+              placeholder="For example: mushrooms, mayonnaise, spicy food"
+            ></textarea>
+
+            <small class="field-help">
+              Separate multiple items with commas.
+            </small>
+          </div>
+        </article>
+
+        <div class="form-actions">
+          <button
+            class="button button-primary"
+            id="save-preferences-button"
+            type="button"
+          >
+            Save food preferences
+          </button>
+        </div>
+
+        <p
+          class="form-message"
+          id="preference-form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </section>
+
+      <!-- Meal plan -->
+      <section
+        class="app-section"
+        id="meal-plan"
+        data-app-section
+        hidden
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Step 3</p>
+            <h1>Your 11-day plan</h1>
+
+            <p class="page-introduction">
+              Your personalized eating plan will appear here once the
+              nutrition engine is ready.
+            </p>
+          </div>
+
+          <button
+            class="button button-primary"
+            id="generate-plan-button"
+            type="button"
+            disabled
+          >
+            Generate new plan
+          </button>
+        </div>
+
+        <div class="coming-soon-card">
+          <span class="coming-soon-icon" aria-hidden="true">11</span>
+
+          <div>
+            <p class="eyebrow">Coming in the next milestone</p>
+            <h2>Personalized meal generation</h2>
+
+            <p>
+              Eleven will use your profile, nutrition targets and selected
+              foods to create four eating occasions for each of the next
+              11 days.
+            </p>
+          </div>
+        </div>
+
+        <div class="day-grid" id="meal-plan-days"></div>
+      </section>
+
+      <!-- Grocery list -->
+      <section
+        class="app-section"
+        id="grocery-list"
+        data-app-section
+        hidden
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Shopping</p>
+            <h1>Grocery list</h1>
+
+            <p class="page-introduction">
+              Ingredients from your generated meal plan will be consolidated
+              and organized by grocery-store section.
+            </p>
+          </div>
+
+          <button
+            class="button button-secondary"
+            id="print-grocery-list-button"
+            type="button"
+            disabled
+          >
+            Print list
+          </button>
+        </div>
+
+        <div class="coming-soon-card">
+          <span class="coming-soon-icon" aria-hidden="true">✓</span>
+
+          <div>
+            <p class="eyebrow">Generated automatically</p>
+            <h2>One organized shopping list</h2>
+
+            <p>
+              Produce, proteins, dairy, pantry items and quantities will
+              appear here after an 11-day plan has been generated.
+            </p>
+          </div>
+        </div>
+
+        <div class="grocery-grid" id="grocery-list-content"></div>
+      </section>
+
+      <!-- Progress -->
+      <section
+        class="app-section"
+        id="progress"
+        data-app-section
+        hidden
+      >
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Your results</p>
+            <h1>Progress</h1>
+
+            <p class="page-introduction">
+              Record weight and measurements as you work through each
+              11-day cycle.
+            </p>
+          </div>
+
+          <button
+            class="button button-primary"
+            id="add-progress-entry-button"
+            type="button"
+            disabled
+          >
+            Add entry
+          </button>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Starting weight</span>
+            </div>
+
+            <strong id="progress-starting-weight">—</strong>
+            <small>Your initial profile weight</small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Current weight</span>
+            </div>
+
+            <strong id="progress-current-weight">—</strong>
+            <small>Your most recent entry</small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Total change</span>
+            </div>
+
+            <strong id="progress-total-change">—</strong>
+            <small>Since your starting date</small>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card-heading">
+              <span>Goal weight</span>
+            </div>
+
+            <strong id="progress-goal-weight">—</strong>
+            <small>Saved in your profile</small>
+          </article>
+        </div>
+
+        <div class="coming-soon-card">
+          <span class="coming-soon-icon" aria-hidden="true">↗</span>
+
+          <div>
+            <p class="eyebrow">Future milestone</p>
+            <h2>Track each 11-day cycle</h2>
+
+            <p>
+              Weight history, waist measurements, adherence and progress
+              charts will be added after the meal generator is complete.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <p>
+          Eleven provides general meal-planning information and is not a
+          substitute for medical advice, diagnosis or treatment.
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
