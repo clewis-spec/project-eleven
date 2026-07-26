@@ -341,6 +341,50 @@ window.ELEVEN_PREFERENCES = (() => {
       </span>
     `;
 
+    const badge =
+  document.createElement("span");
+
+badge.className =
+  "food-card-badge";
+
+badge.textContent =
+  food.isCustom
+    ? "Custom food"
+    : "Built-in";
+
+if (!food.isCustom) {
+  badge.hidden = true;
+}
+
+const customActions =
+  document.createElement("span");
+
+customActions.className =
+  "custom-food-card-actions";
+
+if (food.isCustom) {
+  customActions.innerHTML = `
+    <button
+      type="button"
+      class="custom-food-card-action"
+      data-edit-custom-food="${escapeHtmlAttribute(food.id)}"
+      aria-label="Edit ${escapeHtmlAttribute(food.name)}"
+    >
+      Edit
+    </button>
+
+    <button
+      type="button"
+      class="custom-food-card-action is-delete"
+      data-delete-custom-food="${escapeHtmlAttribute(food.id)}"
+      aria-label="Delete ${escapeHtmlAttribute(food.name)}"
+    >
+      Delete
+    </button>
+  `;
+} else {
+  customActions.hidden = true;
+}
     const selectedIndicator =
       document.createElement("span");
 
@@ -354,13 +398,15 @@ window.ELEVEN_PREFERENCES = (() => {
 
     selectedIndicator.textContent = "✓";
 
-    content.append(
-      icon,
-      name,
-      serving,
-      nutrition,
-      selectedIndicator
-    );
+  content.append(
+  badge,
+  icon,
+  name,
+  serving,
+  nutrition,
+  customActions,
+  selectedIndicator
+);
 
     label.append(
       input,
@@ -898,6 +944,13 @@ window.ELEVEN_PREFERENCES = (() => {
     );
   }
 
+  function escapeHtmlAttribute(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
   return {
     init,
     restorePreferences,
