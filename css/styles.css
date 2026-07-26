@@ -1731,3 +1731,236 @@ textarea:focus {
     display: none;
   }
 }
+
+/* =========================================================
+   17. CUSTOM FOOD INTERFACE
+   ========================================================= */
+
+.custom-food-modal-open {
+  overflow: hidden;
+}
+
+.custom-food-modal {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.custom-food-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 22, 18, 0.62);
+  backdrop-filter: blur(5px);
+}
+
+.custom-food-dialog {
+  position: relative;
+  z-index: 1;
+
+  overflow-y: auto;
+  width: min(920px, 100%);
+  max-height: calc(100vh - 48px);
+
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background: var(--color-surface);
+  box-shadow: var(--shadow-large);
+}
+
+.custom-food-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 26px;
+}
+
+.custom-food-dialog-header p:last-child {
+  margin-bottom: 0;
+}
+
+.custom-food-close-button {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.custom-food-close-button:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
+
+.custom-food-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.custom-food-meal-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.custom-food-meal-types label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: #fafbf9;
+
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.custom-food-meal-types input {
+  width: auto;
+  min-height: auto;
+  margin: 0;
+}
+
+.custom-food-verification {
+  margin-top: 22px;
+  padding: 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  background: var(--color-primary-soft);
+}
+
+.custom-food-verification label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.custom-food-verification input {
+  width: auto;
+  min-height: auto;
+  margin-top: 3px;
+}
+
+.custom-food-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.optional-label {
+  margin-left: 5px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.food-card-badge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+
+  padding: 4px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-warning);
+
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.custom-food-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  width: 100%;
+  margin-top: 3px;
+}
+
+.custom-food-card-action {
+  padding: 5px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background: var(--color-surface);
+  color: var(--color-primary);
+
+  cursor: pointer;
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.custom-food-card-action:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.custom-food-card-action.is-delete {
+  color: var(--color-danger);
+}
+
+.custom-food-card-action.is-delete:hover {
+  border-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+@media (max-width: 620px) {
+  .custom-food-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .custom-food-dialog {
+    width: 100%;
+    max-height: 94vh;
+
+    padding: 22px 16px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .custom-food-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-food-form-actions {
+    width: 100%;
+  }
+
+  .custom-food-form-actions .button {
+    flex: 1;
+  }
+}
