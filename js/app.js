@@ -220,6 +220,14 @@ window.ELEVEN_APP = (() => {
       window.ELEVEN_MEAL_GENERATOR.init();
     }
 
+if (
+  window.ELEVEN_DASHBOARD &&
+  typeof window.ELEVEN_DASHBOARD.init ===
+    "function"
+) {
+  window.ELEVEN_DASHBOARD.init();
+}
+    
     if (
       window.ELEVEN_GROCERY &&
       typeof window.ELEVEN_GROCERY.init ===
