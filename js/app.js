@@ -221,6 +221,14 @@ window.ELEVEN_APP = (() => {
     }
 
 if (
+  window.ELEVEN_CALENDAR &&
+  typeof window.ELEVEN_CALENDAR.init ===
+    "function"
+) {
+  window.ELEVEN_CALENDAR.init();
+}
+    
+if (
   window.ELEVEN_GROCERY &&
   typeof window.ELEVEN_GROCERY.init ===
     "function"
