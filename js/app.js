@@ -221,6 +221,14 @@ window.ELEVEN_APP = (() => {
     }
 
 if (
+  window.ELEVEN_GROCERY &&
+  typeof window.ELEVEN_GROCERY.init ===
+    "function"
+) {
+  window.ELEVEN_GROCERY.init();
+}
+    
+if (
   window.ELEVEN_DASHBOARD &&
   typeof window.ELEVEN_DASHBOARD.init ===
     "function"
@@ -578,7 +586,7 @@ if (
       refreshDashboard();
 
       if (
-        window.ELEVEN_PROFILE &&
+        PROFILE &&
         typeof window.ELEVEN_PROFILE
           .updateProfileDisplays ===
           "function"
