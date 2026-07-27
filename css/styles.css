@@ -3442,3 +3442,1058 @@ textarea:focus {
     flex-direction: column;
   }
 }
+
+/* =========================================================
+   ELEVEN — PREMIUM GROCERY EXPERIENCE
+   ========================================================= */
+
+.eleven-grocery-root {
+  display: grid;
+  gap: 26px;
+}
+
+
+/* Empty and ready states */
+
+.grocery-empty-state,
+.grocery-ready-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  border-radius: 30px;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #faf8f2 100%
+    );
+  box-shadow:
+    0 22px 60px rgba(17, 24, 39, 0.08);
+}
+
+.grocery-empty-state {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 42px;
+  text-align: center;
+}
+
+.grocery-empty-state::before,
+.grocery-ready-card::before {
+  content: "";
+  position: absolute;
+  top: -105px;
+  right: -90px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background:
+    rgba(201, 164, 82, 0.12);
+}
+
+.grocery-empty-state > *,
+.grocery-ready-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.grocery-empty-state.is-error {
+  background:
+    linear-gradient(
+      145deg,
+      #fffafa,
+      #fff1f1
+    );
+}
+
+.grocery-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 18px;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      145deg,
+      #f8edcf,
+      #ecd89f
+    );
+  color: #7b5b20;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.grocery-empty-state h1 {
+  margin: 0 0 13px;
+  color: #111827;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.grocery-empty-state > p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0 0 24px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.grocery-ready-card {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    280px;
+  gap: 34px;
+  align-items: center;
+  padding: 38px;
+}
+
+.grocery-ready-content h1 {
+  margin: 0 0 14px;
+  color: #111827;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.grocery-ready-content > p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.grocery-ready-highlights {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.grocery-ready-highlights span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 15px;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 17px;
+  background:
+    rgba(255, 255, 255, 0.78);
+  color: #8b919b;
+  font-size: 0.7rem;
+}
+
+.grocery-ready-highlights strong {
+  color: #111827;
+  font-size: 1rem;
+}
+
+.grocery-ready-visual {
+  display: flex;
+  width: 220px;
+  height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  border: 1px solid rgba(201, 164, 82, 0.28);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      #fffdf7 0%,
+      #f5e8c6 100%
+    );
+  box-shadow:
+    inset 0 0 0 13px rgba(255, 255, 255, 0.65),
+    0 18px 45px rgba(141, 104, 34, 0.13);
+}
+
+.grocery-ready-visual span {
+  font-size: 2.8rem;
+}
+
+.grocery-ready-visual strong {
+  margin-top: 10px;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.grocery-ready-visual small {
+  margin-top: 5px;
+  color: #8b6a2f;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* Grocery hero */
+
+.grocery-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+  gap: 32px;
+  align-items: center;
+  overflow: hidden;
+  padding: 36px;
+  border-radius: 31px;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(229, 200, 117, 0.25),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #111827 0%,
+      #202938 58%,
+      #2d3748 100%
+    );
+  color: #ffffff;
+  box-shadow:
+    0 28px 72px rgba(17, 24, 39, 0.19);
+}
+
+.grocery-hero::before {
+  content: "";
+  position: absolute;
+  right: -110px;
+  bottom: -180px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+}
+
+.grocery-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.grocery-hero-kicker {
+  margin: 0 0 10px;
+  color: #e5c875;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.grocery-hero h1 {
+  margin: 0 0 13px;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.grocery-hero-content > p:not(.grocery-hero-kicker) {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+}
+
+.grocery-hero-progress {
+  display: grid;
+  grid-template-columns:
+    auto minmax(150px, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  max-width: 630px;
+  margin-top: 27px;
+}
+
+.grocery-hero-progress > div:first-child,
+.grocery-hero-progress > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grocery-hero-progress strong {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.grocery-hero-progress span:not(
+  .grocery-completion-track span
+) {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+}
+
+.grocery-completion-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+.grocery-completion-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      #b9903d,
+      #f0d882
+    );
+  box-shadow:
+    0 0 22px rgba(240, 216, 130, 0.32);
+  transition:
+    width 200ms ease;
+}
+
+.grocery-score-card {
+  display: flex;
+  width: 154px;
+  height: 154px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background:
+    rgba(255, 255, 255, 0.075);
+  box-shadow:
+    inset 0 0 0 11px rgba(255, 255, 255, 0.025);
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.grocery-score-card strong {
+  color: #ffffff;
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.grocery-score-card span {
+  margin-top: 8px;
+  color: #e5c875;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.grocery-score-card small {
+  margin-top: 5px;
+  color:
+    rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+}
+
+
+/* Toolbar */
+
+.grocery-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 19px 21px;
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow:
+    0 12px 34px rgba(17, 24, 39, 0.055);
+}
+
+.grocery-toolbar-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.grocery-toolbar-summary strong {
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.grocery-toolbar-summary span {
+  color: #8b919b;
+  font-size: 0.74rem;
+}
+
+.grocery-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.grocery-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  border-radius: 999px;
+  background: #fafafa;
+  color: #4b5563;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+
+.grocery-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #b9903d;
+}
+
+
+/* Main grocery layout */
+
+.grocery-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(300px, 0.65fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.grocery-departments {
+  display: grid;
+  gap: 20px;
+}
+
+.grocery-sidebar {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 20px;
+}
+
+
+/* Department cards */
+
+.grocery-department-card {
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow:
+    0 16px 42px rgba(17, 24, 39, 0.06);
+}
+
+.grocery-department-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+  background:
+    linear-gradient(
+      135deg,
+      #fafafa,
+      #f8f5ed
+    );
+}
+
+.grocery-department-header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.grocery-department-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  background:
+    linear-gradient(
+      145deg,
+      #faf3df,
+      #f1e2b8
+    );
+  font-size: 1.25rem;
+}
+
+.grocery-department-header .eyebrow {
+  margin-bottom: 4px;
+}
+
+.grocery-department-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.2rem;
+}
+
+.grocery-department-count {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #7b5d25;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.grocery-item-list {
+  display: grid;
+}
+
+
+/* Grocery item */
+
+.grocery-item {
+  display: grid;
+  grid-template-columns:
+    auto minmax(0, 1fr);
+  gap: 15px;
+  padding: 20px 23px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+  transition:
+    background 160ms ease,
+    opacity 160ms ease;
+}
+
+.grocery-item:last-child {
+  border-bottom: 0;
+}
+
+.grocery-item:hover {
+  background: #fffdf8;
+}
+
+.grocery-item.is-checked {
+  background: #fafafa;
+  opacity: 0.68;
+}
+
+.grocery-item.is-checked h3,
+.grocery-item.is-checked
+.grocery-item-heading strong {
+  text-decoration: line-through;
+}
+
+.grocery-item-check {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.grocery-item-check input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.grocery-item-check span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  border-radius: 9px;
+  background: #ffffff;
+  color: transparent;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.grocery-item-check input:checked + span {
+  border-color: #b9903d;
+  background:
+    linear-gradient(
+      145deg,
+      #d3a946,
+      #e8cf81
+    );
+  color: #111827;
+}
+
+.grocery-item-content {
+  min-width: 0;
+}
+
+.grocery-item-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.grocery-item-heading h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.grocery-item-heading p {
+  margin: 4px 0 0;
+  color: #9ca3af;
+  font-size: 0.72rem;
+}
+
+.grocery-item-heading > strong {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border-radius: 11px;
+  background: #f5f1e7;
+  color: #76591f;
+  font-size: 0.77rem;
+}
+
+.grocery-item-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.grocery-item-metadata span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #f4f5f6;
+  color: #69707b;
+  font-size: 0.67rem;
+}
+
+.grocery-item-metadata .is-pantry {
+  background: #f8eed2;
+  color: #7c5d22;
+}
+
+.grocery-item-uses {
+  margin-top: 13px;
+}
+
+.grocery-item-uses summary {
+  width: fit-content;
+  color: #977127;
+  font-size: 0.72rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.grocery-item-uses ul {
+  display: grid;
+  gap: 7px;
+  margin: 11px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grocery-item-uses li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  color: #7b818b;
+  font-size: 0.68rem;
+}
+
+.grocery-item-uses li strong {
+  color: #374151;
+  font-size: 0.68rem;
+  text-align: right;
+}
+
+
+/* Sidebar summary cards */
+
+.grocery-summary-card {
+  padding: 22px;
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow:
+    0 14px 38px rgba(17, 24, 39, 0.055);
+}
+
+.grocery-summary-card .eyebrow {
+  margin-bottom: 5px;
+}
+
+.grocery-summary-card h2 {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 1.15rem;
+}
+
+.grocery-summary-stat-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.grocery-summary-stat-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px;
+  border-radius: 14px;
+  background: #f7f7f7;
+}
+
+.grocery-summary-stat-grid span {
+  color: #8b919b;
+  font-size: 0.66rem;
+}
+
+.grocery-summary-stat-grid strong {
+  color: #111827;
+  font-size: 1rem;
+}
+
+.grocery-reuse-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 13px;
+  border-radius: 14px;
+  background: #f8f2df;
+}
+
+.grocery-reuse-stat span {
+  color: #826425;
+  font-size: 0.7rem;
+}
+
+.grocery-reuse-stat strong {
+  color: #654c18;
+  font-size: 0.78rem;
+}
+
+.grocery-waste-score {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 11px;
+}
+
+.grocery-waste-score strong {
+  color: #111827;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.grocery-waste-score span {
+  color: #8b919b;
+  font-size: 0.7rem;
+}
+
+.grocery-summary-copy {
+  margin: 0 0 15px;
+  color: #6b7280;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.grocery-leftover-list {
+  display: grid;
+  gap: 8px;
+}
+
+.grocery-leftover-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: #faf7ef;
+}
+
+.grocery-leftover-list span {
+  color: #5f6670;
+  font-size: 0.72rem;
+}
+
+.grocery-leftover-list strong {
+  color: #876722;
+  font-size: 0.75rem;
+}
+
+.grocery-positive-message {
+  margin: 0;
+  padding: 11px;
+  border-radius: 12px;
+  background: #edf8f0;
+  color: #33734a;
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+
+/* Decision log */
+
+.grocery-decision-list {
+  display: grid;
+  gap: 10px;
+}
+
+.grocery-decision-item {
+  display: grid;
+  grid-template-columns:
+    auto minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f7f7f7;
+}
+
+.grocery-decision-item > span {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e9ebee;
+  color: #4b5563;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.grocery-decision-item.positive > span {
+  background: #dff1e5;
+  color: #2f6b43;
+}
+
+.grocery-decision-item.warning > span {
+  background: #f6e8c2;
+  color: #7d5d1e;
+}
+
+.grocery-decision-item.summary > span {
+  background: #eee2bd;
+  color: #71531a;
+}
+
+.grocery-decision-item strong {
+  color: #1f2937;
+  font-size: 0.75rem;
+}
+
+.grocery-decision-item p {
+  margin: 4px 0 0;
+  color: #7a8089;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+
+/* Filter empty state */
+
+.grocery-filter-empty {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+  border: 1px dashed rgba(17, 24, 39, 0.14);
+  border-radius: 25px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.grocery-filter-empty > span {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 13px;
+  border-radius: 50%;
+  background: #e7f4eb;
+  color: #2f7148;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.grocery-filter-empty h2 {
+  margin: 0 0 8px;
+  color: #111827;
+}
+
+.grocery-filter-empty p {
+  max-width: 500px;
+  margin: 0 0 18px;
+  color: #7b818b;
+  line-height: 1.6;
+}
+
+
+/* Responsive grocery layout */
+
+@media (max-width: 1050px) {
+  .grocery-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      280px;
+  }
+
+  .grocery-ready-card {
+    grid-template-columns:
+      minmax(0, 1fr)
+      220px;
+  }
+
+  .grocery-ready-visual {
+    width: 185px;
+    height: 185px;
+  }
+}
+
+@media (max-width: 880px) {
+  .grocery-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grocery-sidebar {
+    position: static;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .grocery-sidebar
+  .grocery-summary-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .grocery-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grocery-toolbar-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .grocery-ready-card {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    border-radius: 24px;
+  }
+
+  .grocery-ready-visual {
+    display: none;
+  }
+
+  .grocery-ready-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .grocery-hero {
+    grid-template-columns: 1fr;
+    padding: 27px 23px;
+    border-radius: 25px;
+  }
+
+  .grocery-score-card {
+    width: 125px;
+    height: 125px;
+    justify-self: center;
+  }
+
+  .grocery-hero-progress {
+    grid-template-columns: 1fr;
+  }
+
+  .grocery-completion-track {
+    width: 100%;
+  }
+
+  .grocery-toolbar-actions {
+    width: 100%;
+  }
+
+  .grocery-toolbar-actions .button {
+    flex: 1 1 150px;
+  }
+
+  .grocery-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .grocery-sidebar
+  .grocery-summary-card:last-child {
+    grid-column: auto;
+  }
+
+  .grocery-department-card {
+    border-radius: 22px;
+  }
+
+  .grocery-department-header {
+    padding: 18px;
+  }
+
+  .grocery-item {
+    padding: 18px;
+  }
+
+  .grocery-item-heading {
+    flex-direction: column;
+  }
+
+  .grocery-item-heading > strong {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .grocery-toolbar-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grocery-toggle {
+    justify-content: center;
+  }
+
+  .grocery-toolbar-actions .button {
+    width: 100%;
+  }
+
+  .grocery-department-header {
+    align-items: flex-start;
+  }
+
+  .grocery-department-count {
+    margin-top: 5px;
+  }
+
+  .grocery-item-uses li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grocery-item-uses li strong {
+    text-align: left;
+  }
+}
